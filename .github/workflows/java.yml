@@ -17,10 +17,16 @@ jobs:
     - name: Configurar Java
       uses: actions/setup-java@v2
       with:
-        java-version: '11'   # Usa la versión de Java que necesites
+        java-version: '21'
+
+    - name: Instalar JUnit
+      run: |
+        mkdir -p lib
+        curl -L https://repo1.maven.org/maven2/org/junit/junit-jupiter-api/5.7.0/junit-jupiter-api-5.7.0.jar -o lib/junit-jupiter-api.jar
+        curl -L https://repo1.maven.org/maven2/org/junit/junit-jupiter-engine/5.7.0/junit-jupiter-engine-5.7.0.jar -o lib/junit-jupiter-engine.jar
 
     - name: Compilar archivos Java
-      run: javac src/Cuenta.java src/CuentaTest.java
+      run: javac -d out src/CuentaCorriente.java src/CuentaCorrienteTest.java
 
-    - name: Ejecutar test
-      run: java -cp src CuentaTest
+    - name: Ejecutar los tests
+      run: java -cp out:lib/junit-jupiter-api.jar:lib/junit-jupiter-engine.jar org.junit.jupiter.api.TestCuentaCorriente
