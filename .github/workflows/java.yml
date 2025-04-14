@@ -30,4 +30,4 @@ jobs:
       run: javac -d out src/CuentaCorriente.java src/CuentaCorrienteTest.java
 
     - name: Ejecutar los tests
-      run: java -cp out:lib/junit-jupiter-api.jar:lib/junit-jupiter-engine.jar org.junit.jupiter.api.TestCuentaCorriente
+      run: java -cp out:lib/junit-jupiter-api.jar:lib/junit-jupiter-engine.jar org.junit.platform.console.ConsoleLauncher --scan-classpath
