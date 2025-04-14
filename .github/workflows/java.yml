@@ -1,0 +1,26 @@
+name: Java CI (Eclipse style)
+
+on:
+  push:
+    branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Clonar el repositorio
+      uses: actions/checkout@v3
+
+    - name: Configurar Java
+      uses: actions/setup-java@v2
+      with:
+        java-version: '11'   # Usa la versión de Java que necesites
+
+    - name: Compilar archivos Java
+      run: javac src/Cuenta.java src/CuentaTest.java
+
+    - name: Ejecutar test
+      run: java -cp src CuentaTest
