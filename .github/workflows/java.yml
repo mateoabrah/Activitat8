@@ -18,7 +18,7 @@ jobs:
       uses: actions/setup-java@v2
       with:
         java-version: '21' 
-        distribution: 'temurin'  
+        distribution: 'temurin'
 
     - name: Instalar JUnit
       run: |
@@ -27,7 +27,7 @@ jobs:
         curl -L https://repo1.maven.org/maven2/org/junit/junit-jupiter-engine/5.7.0/junit-jupiter-engine-5.7.0.jar -o lib/junit-jupiter-engine.jar
 
     - name: Compilar archivos Java
-      run: javac -d out src/CuentaCorriente.java src/CuentaCorrienteTest.java
+      run: javac -d out -cp ".:libs/*" src/CuentaCorriente.java src/CuentaCorrienteTest.java
 
     - name: Ejecutar los tests
-      run: java -cp out:lib/junit-jupiter-api.jar:lib/junit-jupiter-engine.jar org.junit.platform.console.ConsoleLauncher --scan-classpath
+      run: java -cp "out:libs/*" org.junit.platform.console.ConsoleLauncher --scan-classpath
