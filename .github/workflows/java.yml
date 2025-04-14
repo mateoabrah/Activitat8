@@ -18,6 +18,7 @@ jobs:
       uses: actions/setup-java@v2
       with:
         java-version: '21'
+        distribution: 'adoptopenjdk'
 
     - name: Instalar JUnit
       run: |
@@ -30,3 +31,4 @@ jobs:
 
     - name: Ejecutar los tests
       run: java -cp out:lib/junit-jupiter-api.jar:lib/junit-jupiter-engine.jar org.junit.jupiter.api.TestCuentaCorriente
+
