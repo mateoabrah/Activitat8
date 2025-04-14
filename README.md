@@ -37,8 +37,8 @@ Para ejecutar este proyecto, necesitas tener instalados los siguientes requisito
 
 Primero, clona el repositorio en tu máquina local con el siguiente comando:
 
-```bash
 git clone https://github.com/mateoabrah/Activitat8.git
+
 ```
 
 ### 2. Compilar el proyecto
@@ -91,4 +91,5 @@ Si deseas contribuir a este proyecto, sigue estos pasos:
 ## Licencia
 
 Este proyecto está bajo la licencia **MIT**.
+
 ```
