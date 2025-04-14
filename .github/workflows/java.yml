@@ -17,8 +17,8 @@ jobs:
     - name: Configurar Java
       uses: actions/setup-java@v2
       with:
-        java-version: '21'
-        distribution: 'temurin'
+        java-version: '21' 
+        distribution: 'temurin'  
 
     - name: Instalar JUnit
       run: |
